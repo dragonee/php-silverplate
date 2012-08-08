@@ -95,8 +95,15 @@ class App {
         echo $response;
     }
 
+    public function parseMDMeta($file_contents) {
+        return preg_replace_callback('/^Meta\s+([^:]+):(.*)$/mi', function($matches) {
+            meta(trim($matches[1]), trim($matches[2]));
+            return '';
+        }, $file_contents);
+    }
+
     public function renderMD($pathname) {
-        return Markdown(file_get_contents($pathname));
+        return Markdown($this->parseMDMeta(file_get_contents($pathname)));
     }
 
     public function renderLayout($content) {
