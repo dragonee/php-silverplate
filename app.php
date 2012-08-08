@@ -51,15 +51,15 @@ class App {
             $filename = rtrim($filename, '/') . '/index';
         }
 
-        if($pathname = $this->get_pathname($filename . App::MD)) {
+        if($pathname = $this->get_pathname($filename . '.' . App::MD)) {
             return $pathname;
         }
 
-        if($pathname = $this->get_pathname($filename . App::PHP)) {
+        if($pathname = $this->get_pathname($filename . '.' . App::PHP)) {
             return $pathname;
         }
 
-        if($pathname = $this->get_pathname($filename . App::REDIR)) {
+        if($pathname = $this->get_pathname($filename . '.' . App::REDIR)) {
             return $pathname;
         }
 
