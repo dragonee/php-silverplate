@@ -1,6 +1,7 @@
 <?php
 
 include 'lib/markdown/markdown.php';
+include 'lib/blocks.php';
 
 class Http404 extends Exception {
 }
@@ -124,5 +125,4 @@ class App {
 }
 
 $app = new App;
-
 $app->run();
