@@ -19,6 +19,11 @@ class Http302 extends Exception {
 }
 
 class App {
+    const 
+        MD = 'md', 
+        PHP = 'php',
+        REDIR = 'redir';
+
     public static function uri() {
         return trim($_SERVER['REDIRECT_INFO_REQUEST_URI'], '/');
     }
@@ -46,15 +51,15 @@ class App {
             $filename = rtrim($filename, '/') . '/index';
         }
 
-        if($pathname = $this->get_pathname($filename . '.md')) {
+        if($pathname = $this->get_pathname($filename . App::MD)) {
             return $pathname;
         }
 
-        if($pathname = $this->get_pathname($filename . '.php')) {
+        if($pathname = $this->get_pathname($filename . App::PHP)) {
             return $pathname;
         }
 
-        if($pathname = $this->get_pathname($filename . '.redir')) {
+        if($pathname = $this->get_pathname($filename . App::REDIR)) {
             return $pathname;
         }
 
@@ -72,13 +77,13 @@ class App {
             $pathname = $this->find_file($uri);
         
             $extension = pathinfo($pathname, PATHINFO_EXTENSION);
-            if($extension == 'redir') {
+            if($extension == App::REDIR) {
                 throw new Http302(trim(file_get_contents($pathname)));
             }
 
-            if($extension == 'php') {
+            if($extension == App::PHP) {
                 $content = $this->renderHTML($pathname);
-            } elseif($extension == 'md') {
+            } elseif($extension == App::MD) {
                 $content = $this->renderMD($pathname);
             }
 
@@ -114,9 +119,7 @@ class App {
         extract($data);
 
         ob_start();
-
         include $pathname;
-        
         return ob_get_clean();
     }
 }
