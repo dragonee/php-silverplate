@@ -40,11 +40,11 @@ function close($name) {
     Block::get($name)->close();
 }
 
-function set_block($name, $value=null) {
+function meta($name, $value=null) {
     return Block::get($name)->contents($value);
 }
 
-function get_block($name, $default=null) {
+function get($name, $default=null) {
     if($contents = Block::get($name)->contents()) {
         return $contents;
     }

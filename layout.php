@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title><?php echo get_block('title', 'Tytuł') ?></title>
+    <title><?php echo get('title', 'Tytuł') ?></title>
 </head>
 <body>
 OMG

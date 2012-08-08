@@ -19,18 +19,8 @@ class Http302 extends Exception {
 }
 
 class App {
-    private static $layout = 'layout';
-    
     public static function uri() {
         return trim($_SERVER['REDIRECT_INFO_REQUEST_URI'], '/');
-    }
-
-    public static function layout($layout=null) {
-        if(isset($layout)) {
-            static::$layout = $layout;
-        }
-
-        return static::$layout;
     }
 
     public function get_pathname($filename) {
@@ -110,7 +100,7 @@ class App {
     }
 
     public function renderLayout($content) {
-        return $this->renderHTML($this->get_pathname(static::layout() . '.php'), array('content' => $content));
+        return $this->renderHTML($this->get_pathname(get('layout', 'layout') . '.php'), array('content' => $content));
     }
 
     public function renderHTML($pathname, $data=array()) {
