@@ -30,4 +30,4 @@ it via the example.com/text/ address.
 - nested directories are also supported.
 - single 404.php file for your convenience.
 
-# vim: set tw=72:
+vim: set tw=72:
