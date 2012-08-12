@@ -25,7 +25,7 @@ class App {
         REDIR = 'redir';
 
     public static function uri() {
-        return trim($_SERVER['REDIRECT_INFO_REQUEST_URI'], '/');
+        return trim($_GET['p'], '/');
     }
 
     public function get_pathname($filename) {
@@ -50,17 +50,11 @@ class App {
         if(is_dir($filename)) {
             $filename = rtrim($filename, '/') . '/index';
         }
-
-        if($pathname = $this->get_pathname($filename . '.' . App::MD)) {
-            return $pathname;
-        }
-
-        if($pathname = $this->get_pathname($filename . '.' . App::PHP)) {
-            return $pathname;
-        }
-
-        if($pathname = $this->get_pathname($filename . '.' . App::REDIR)) {
-            return $pathname;
+        
+        foreach(array(App::MD, App::PHP, App::REDIR) as $extension) {
+            if($pathname = $this->get_pathname($filename . '.' . $extension)) {
+                return $pathname;
+            }
         }
 
         throw new Http404;
@@ -71,6 +65,10 @@ class App {
 
         try {
             if(!$uri) {
+                throw new Http404;
+            }
+
+            if(in_array($uri, array('404', 'layout', 'app', 'lib/blocks')) || strpos($uri, 'lib/markdown') === 0) {
                 throw new Http404;
             }
 

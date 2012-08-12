@@ -2,8 +2,10 @@ Options -MultiViews
 <IfModule mod_rewrite.c>
      RewriteEngine on
 
-     RewriteRule ^index.php$ app.php [L,E=INFO_REQUEST_URI:.,NE]
-     
+     RewriteRule ^$ app.php?p=. [L,QSA]
+
      RewriteCond %{REQUEST_FILENAME} !-f
-     RewriteRule ^(.+)$ app.php [L,E=INFO_REQUEST_URI:$1,NE]
+     RewriteRule ^(.+)$ app.php?p=$1 [L,QSA]
 </IfModule>
+
+DirectoryIndex app.php
