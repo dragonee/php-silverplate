@@ -9,7 +9,9 @@ care only about the content you are writing.
 ## Quickstart Guide
 
 This project has submodules. Make sure to
+
     $ git submodule update --init 
+
 them.
 
 Modify index.php file and put inside some content. Then modify the
