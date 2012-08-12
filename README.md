@@ -5,6 +5,17 @@ PHP Boilerplate is the ultimate code for your static website needs.
 Written in less than 200 lines, it is a small app that allows you to
 care only about the content you are writing.
 
+
+## Quickstart Guide
+
+This project has submodules. Make sure to
+    $ git submodule update --init 
+them.
+
+Modify index.php file and put inside some content. Then modify the
+layout.php file to put some style declarations and so on. Then, access
+the main directory of PHP Boilerplate installation.
+
 ## Features
 
 - single layout.php file for the whole website (with an ability to
