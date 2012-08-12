@@ -1,9 +1,8 @@
 <html>
 <head>
-    <title><?php echo get('title', 'Tytuł') ?></title>
+    <title><?php echo get('title', 'Default Title') ?></title>
 </head>
 <body>
-OMG
 <?php echo $content ?> 
 </body>
-</html
+</html>
