@@ -62,7 +62,7 @@ app.php is located in. This also affects symbolic links.
 
 You can provide blocks in the layout file that can be overwritten by
 data specified in the content file. The most common use case is to
-provide the <title> tag of the document.
+provide the &lt;title&gt; tag of the document.
 
 In order to define a block, put a get() function in the layout file:
 
