@@ -42,9 +42,9 @@ When an user navigates to the arbitrary URI, for example `/example`,
 exists, `app.php` sets its URI internally to `/example/index` and resets the
 search.
 - Next, a file with the name `example.md` is looked up. If it exists, it
-is parsed as Markdown file and rendered in the layout.php file.
+is parsed as Markdown file and rendered in the `layout.php` file.
 - Next, a file with the name `example.php` is looked up. If it exists, it
-is treated as the PHP file and rendered in the layout.php file.
+is treated as the PHP file and rendered in the `layout.php` file.
 - Next, a file with the name `example.redir` is looked up. If it exists,
 the script returns 302 Found response and redirects to the link
 specified in the contents of the .redir file.
@@ -97,6 +97,7 @@ block:
     <?php meta('layout', 'my_layout') ?>
 
 or:
+
     Meta layout: my_layout
 
 Make sure, that the `my_layout.php` file is present before using it.
