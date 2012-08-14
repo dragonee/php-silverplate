@@ -85,7 +85,7 @@ class App {
                 $content = $this->renderMD($pathname);
             }
 
-            $response = $this->renderLayout($content);
+            $response = $this->renderLayout($content, $extension);
         } catch(Http404 $e) {
             header("HTTP/1.1 404 Not Found");
             $response = $this->renderHTML('404.php');
@@ -109,8 +109,8 @@ class App {
         return Markdown($this->parseMDMeta(file_get_contents($pathname)));
     }
 
-    public function renderLayout($content) {
-        return $this->renderHTML($this->get_pathname(get('layout', 'layout') . '.php'), array('content' => $content));
+    public function renderLayout($content, $extension) {
+        return $this->renderHTML($this->get_pathname(get('layout', 'layout') . '.php'), array('content' => $content, 'type' => $extension . '-file'));
     }
 
     public function renderHTML($pathname, $data=array()) {
