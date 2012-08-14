@@ -88,4 +88,16 @@ In PHP content files you can also open() and close() multiline blocks:
 Currently Markdown files do not have any support for the opening and
 closing blocks.
 
+### Custom Layouts
+
+In order to specify custom layout file for a content file, fill a layout
+block:
+
+    <?php meta('layout', 'my_layout') ?>
+
+or:
+    Meta layout: my_layout
+
+Make sure, that the my_layout.php file is present before using it.
+
 vim: set tw=72:
