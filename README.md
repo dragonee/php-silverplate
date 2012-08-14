@@ -51,8 +51,9 @@ specified in the contents of the .redir file.
 with 404 Page Not Found response. 404.php is not rendered into the
 layout file.
 
-app.php works with nested files and directories, so you can define files
-as you please.
+app.php is completely transparent and relies on the filesystem to find
+files. That means you are able to structure your files in subdirectories
+any way you want.
 
 app.php does not allow accessing files that  are outside the directory
 app.php is located in. This also affects symbolic links.
