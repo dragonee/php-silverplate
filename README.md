@@ -1,9 +1,10 @@
-php-boilerplate
+php-silverplate
 ===============
 
-PHP Boilerplate is the ultimate code for your static website needs.
-Written in less than 200 lines, it is a small app that allows you to
-care only about the content you are writing.
+Content on a silver platter. PHP Silverplate is the ultimate code for 
+your static website needs. Written in less than 200 lines, it allows you to
+care only about the content you are writing. Forget to include
+header.php and footer.php anymore.
 
 
 ## Quickstart Guide
