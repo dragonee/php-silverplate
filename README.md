@@ -1,24 +1,23 @@
 php-silverplate
 ===============
 
-Content on a silver platter. PHP Silverplate is the ultimate code for 
-your static website needs. Written in less than 200 lines, it allows you to
-care only about the content you are writing. Forget to include
-header.php and footer.php anymore.
+Forget to include header.php and footer.php anymore.
 
+PHP Silverplate serves your static content on a silver platter. It does
+not matter if you need to write simple, one-page website, or a whole book - PHP
+Silverplate accepts any **HTML** or **Markdown** files and displays it
+inside a predetermined layout file. And has pretty URLs too.
 
 ## Quickstart Guide
 
-This project has submodules. Make sure to
+Use Composer to download all the necessary dependencies:
 
-    $ git submodule update --init 
+    $ curl -s https://getcomposer.org/installer | php
+    $ php composer.phar install
 
-them.
-
-Modify `index.php` file and put inside some content. Then modify the
-`layout.php` file to include some style declarations and other data as
-well. Then, access the main directory of PHP Boilerplate installation
-with your web browser.
+Make your changes in the `index.php` file. Add necessary style
+declarations to the `layout.php`. And access the main directory of PHP Silverplate 
+installation with your web browser.
 
 ## Features
 
@@ -118,4 +117,4 @@ The `layout.php` provided in this distribution also defines the `classes`
 block, which can be used to build some conditional CSS styles for some
 files on your website.
 
-vim: set tw=72:
+<!-- vim: set tw=72: -->
