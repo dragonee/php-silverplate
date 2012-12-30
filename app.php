@@ -1,12 +1,11 @@
-<?php
+<?php namespace Silverplate;
 
-include 'lib/markdown/markdown.php';
-include 'lib/blocks.php';
+require 'vendor/autoload.php';
 
-class Http404 extends Exception {
+class Http404 extends \Exception {
 }
 
-class Http302 extends Exception {
+class Http302 extends \Exception {
     private $location;
 
     public function __construct($location) {
@@ -106,7 +105,8 @@ class App {
     }
 
     public function renderMD($pathname) {
-        return Markdown($this->parseMDMeta(file_get_contents($pathname)));
+        $parser = new \dflydev\markdown\MarkdownParser;
+        return $parser->transformMarkdown($this->parseMDMeta(file_get_contents($pathname)));
     }
 
     public function renderLayout($content, $extension) {

@@ -1,4 +1,4 @@
-<?php
+<?php namespace Silverplate;
 
 class Block {
     private static $blocks;
@@ -32,22 +32,3 @@ class Block {
     }
 }
 
-function open($name) {
-    Block::get($name)->open();
-}
-
-function close($name) {
-    Block::get($name)->close();
-}
-
-function meta($name, $value=null) {
-    return Block::get($name)->contents($value);
-}
-
-function get($name, $default=null) {
-    if($contents = Block::get($name)->contents()) {
-        return $contents;
-    }
-
-    return $default;
-}
