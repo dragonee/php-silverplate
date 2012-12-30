@@ -1,3 +1,0 @@
-[submodule "lib/markdown"]
-	path = lib/markdown
-	url = https://github.com/michelf/php-markdown.git
