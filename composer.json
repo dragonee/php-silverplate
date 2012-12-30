@@ -1,5 +1,9 @@
 {
     "name": "dragonee/php-silveplate",
+    "description": "A minimal stack for creating static HTML/Markdown websites.",
+    "keywords": ["silverplate", "static", "markdown", "html", "website"],
+    "homepage": "https://github.com/dragonee/php-silverplate",
+    "license": "BSD-4-Clause",
 
     "require": {
         "dflydev/markdown": "1.0.*",
