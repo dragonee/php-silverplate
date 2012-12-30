@@ -5,7 +5,7 @@ Forget to include header.php and footer.php anymore.
 
 PHP Silverplate serves your static content on a silver platter. It does
 not matter if you need to write simple, one-page website, or a whole book - PHP
-Silverplate accepts any **HTML** or **Markdown** files and displays it
+Silverplate accepts any **HTML** or **Markdown** file and displays it
 inside a predetermined layout file. And has pretty URLs too.
 
 ## Quickstart Guide
