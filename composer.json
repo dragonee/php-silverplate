@@ -6,7 +6,7 @@
     "license": "BSD-4-Clause",
 
     "require": {
-        "dflydev/markdown": "1.0.*",
+        "dflydev/markdown": "1.0.*"
     },
 
     "suggest": {
