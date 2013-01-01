@@ -10,10 +10,10 @@ inside a predetermined layout file. And has pretty URLs too.
 
 ## Quickstart Guide
 
-Use Composer to download all the necessary dependencies:
+Use Composer to download the stable version:
 
     $ curl -s https://getcomposer.org/installer | php
-    $ php composer.phar install
+    $ php composer.phar create-project dragonee/php-silverplate
 
 Make your changes in the `index.php` file. Add necessary style
 declarations to the `layout.php`. And access the main directory of PHP Silverplate 
