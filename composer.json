@@ -1,5 +1,5 @@
 {
-    "name": "dragonee/php-silveplate",
+    "name": "dragonee/php-silverplate",
     "description": "A minimal stack for creating static HTML/Markdown websites.",
     "keywords": ["silverplate", "static", "markdown", "html", "website"],
     "homepage": "https://github.com/dragonee/php-silverplate",
