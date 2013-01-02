@@ -23,12 +23,22 @@ class App {
         PHP = 'php',
         REDIR = 'redir';
 
+    protected static $path = null;
+
     public static function uri() {
         return trim($_GET['p'], '/');
     }
 
     public static function path($filename='') {
-        return dirname($_SERVER['SCRIPT_NAME']) . '/' . $filename;
+        if(static::$path === null) {
+            $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https' : 'http';
+            $server = $_SERVER['SERVER_NAME'];
+            $directory = dirname($_SERVER['SCRIPT_NAME']);
+
+            static::$path = sprintf("%s://%s%s/", $protocol, $server, $directory);
+        }
+
+        return static::$path . $filename;
     }
 
     public function get_pathname($filename) {
@@ -113,10 +123,7 @@ class App {
 
         $contents = $this->parseMDMeta(file_get_contents($pathname));
 
-        $host = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https://' : 'http://';
-        $server = $_SERVER['SERVER_NAME'];
-
-        return $parser->transformMarkdown(str_replace('path://', $host . $server . App::path(), $contents));
+        return $parser->transformMarkdown(str_replace('path://', App::path(), $contents));
     }
 
     public function renderLayout($content, $extension) {
