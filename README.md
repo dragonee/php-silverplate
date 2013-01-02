@@ -110,7 +110,7 @@ With the release of v0.8.1, PHP Silverplate gives you a way to write
 paths in your layout and content files in a relative maneer to the
 application root directory.
 
-- Use `<span>p</span>ath://some-image.png` in your Markdown files.
+- Use `path://some-image.png` in your Markdown files.
 - Use `App::path('some-image.png')` in your PHP files.
 
 ### Design
