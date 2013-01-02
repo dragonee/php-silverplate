@@ -27,6 +27,10 @@ class App {
         return trim($_GET['p'], '/');
     }
 
+    public static function path($filename='') {
+        return dirname($_SERVER['SCRIPT_NAME']) . '/' . $filename;
+    }
+
     public function get_pathname($filename) {
         $filename = __DIR__ . '/' . $filename; 
         if(!file_exists($filename)) {
@@ -106,7 +110,13 @@ class App {
 
     public function renderMD($pathname) {
         $parser = new \dflydev\markdown\MarkdownParser;
-        return $parser->transformMarkdown($this->parseMDMeta(file_get_contents($pathname)));
+
+        $contents = $this->parseMDMeta(file_get_contents($pathname));
+
+        $host = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https://' : 'http://';
+        $server = $_SERVER['SERVER_NAME'];
+
+        return $parser->transformMarkdown(str_replace('path://', $host . $server . App::path(), $contents));
     }
 
     public function renderLayout($content, $extension) {
