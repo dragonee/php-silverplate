@@ -33,7 +33,7 @@ class App {
         if(static::$path === null) {
             $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https' : 'http';
             $server = $_SERVER['SERVER_NAME'];
-            $directory = dirname($_SERVER['SCRIPT_NAME']);
+            $directory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
 
             static::$path = sprintf("%s://%s%s/", $protocol, $server, $directory);
         }
