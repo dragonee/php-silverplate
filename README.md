@@ -6,7 +6,8 @@ Forget to include header.php and footer.php anymore.
 PHP Silverplate serves your static content on a silver platter. It does
 not matter if you need to write simple, one-page website, or a whole book - PHP
 Silverplate accepts any **HTML** or **Markdown** file and displays it
-inside a predetermined layout file. And has pretty URLs too.
+inside a predetermined layout file. Pretty URLs and HTML5 Boilerplate
+included.
 
 ## Quickstart Guide
 
@@ -16,7 +17,7 @@ Use Composer to download the stable version:
     $ php composer.phar create-project dragonee/php-silverplate
 
 Make your changes in the `index.php` file. Add necessary style
-declarations to the `layout.php`. And access the main directory of PHP Silverplate 
+declarations to the `css/main.css`. Then access the main directory of PHP Silverplate 
 installation with your web browser.
 
 ## Features
@@ -32,6 +33,7 @@ http://michelf.ca/projects/php-markdown/
 it via the `example.com/text/` address.
 - nested directories are also supported.
 - single `404.php` file for your convenience.
+- HTML5 Boilerplate v4.0.2 - you can go straight to the business.
 
 ## Usage
 
@@ -101,6 +103,15 @@ or:
     Meta layout: my_layout
 
 Make sure, that the `my_layout.php` file is present before using it.
+
+### Relative URLs
+
+With the release of v0.8.1, PHP Silverplate gives you a way to write
+paths in your layout and content files in a relative maneer to the
+application root directory.
+
+- Use `<span>p</span>ath://some-image.png` in your Markdown files.
+- Use `App::path('some-image.png')` in your PHP files.
 
 ### Design
 
