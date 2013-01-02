@@ -71,7 +71,7 @@ class App {
                 throw new Http404;
             }
 
-            if(in_array($uri, array('404', 'layout', 'app', 'lib/blocks')) || strpos($uri, 'lib/markdown') === 0) {
+            if(in_array($uri, array('404', 'layout', 'app'))) {
                 throw new Http404;
             }
 
